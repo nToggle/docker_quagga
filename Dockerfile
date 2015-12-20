@@ -12,7 +12,7 @@ RUN apt-get update --fix-missing && apt-get -y upgrade && \
     apt-get -y install python-pip iproute && apt-get -y clean
 
 # Install a custom version of Quagga from Cumulus Networks
-RUN curl -o /tmp/utilities.deb http://repo.cumulusnetworks.com/pool/CumulusLinux-${CUMULUSLINUX_VERSION}/updates/cl-utilities_${QUAGGA_VERSION}_amd64.deb && dpkg -i /tmp/utilities.deb && rm /tmp/utilities.deb
+RUN curl -o /tmp/utilities.deb http://repo.cumulusnetworks.com/pool/CumulusLinux-${CUMULUSLINUX_VERSION}/updates/cl-utilities_${UTILITIES_VERSION}_amd64.deb && dpkg -i /tmp/utilities.deb && rm /tmp/utilities.deb
 RUN curl -o /tmp/quagga.deb http://repo.cumulusnetworks.com/pool/CumulusLinux-${CUMULUSLINUX_VERSION}/updates/quagga_${QUAGGA_VERSION}_amd64.deb && dpkg -i /tmp/quagga.deb && rm /tmp/quagga.deb
 RUN curl -o /tmp/clcmd.deb http://repo.cumulusnetworks.com/pool/CumulusLinux-${CUMULUSLINUX_VERSION}/updates/python-clcmd_${CLCMD_VERSION}_all.deb && dpkg -i /tmp/clcmd.deb && rm /tmp/clcmd.deb
 
