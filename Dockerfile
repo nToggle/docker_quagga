@@ -15,8 +15,9 @@ RUN apt-get update && \
     apt-get -y --allow-unauthenticated install quagga python-clcmd && \
     apt-get -y clean
 
-COPY quagga_0.99.23.1-1+cl2.5+10_amd64.deb /tmp/quagga_0.99.23.1-1+cl2.5+10_amd64.deb
-RUN dpkg -i /tmp/quagga_0.99.23.1-1+cl2.5+10_amd64.deb
+# Temporary workaround for timing bug.  DEBUG release.
+#COPY quagga_0.99.23.1-1+cl2.5+10_amd64.deb /tmp/quagga_0.99.23.1-1+cl2.5+10_amd64.deb
+#RUN dpkg -i /tmp/quagga_0.99.23.1-1+cl2.5+10_amd64.deb
 
 # Setup Quagga
 RUN pip install ipaddr
