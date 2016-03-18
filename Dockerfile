@@ -23,9 +23,13 @@ RUN apt-get update && \
 RUN pip install ipaddr
 RUN sed -i 's/\/bin\/cat/more/g' /etc/environment # No idea what this is for
 RUN echo 'export VTYSH_PAGER=more' >> /etc/bash.bashrc
-# Ubuntu running 1.10.2 dies because of this.
-RUN adduser root quaggavty
 
-COPY start.sh /start.sh
+# Start Quagga itself.
+COPY start_quagga.sh /etc/my_init.d/00-start_quagga.sh
 
-CMD ["/start.sh"]
+# Start the custom Cumulus cl-cmd service.
+RUN mkdir /etc/service/clcmd
+RUN mkdir /usr/share/cumulus/
+ADD start_clcmd.sh /etc/service/clcmd/run
+
+CMD ["/sbin/my_init"]

@@ -15,4 +15,3 @@ else
 fi
 
 service quagga start
-/usr/bin/python /usr/lib/python2.7/dist-packages/clcmd_server.py
