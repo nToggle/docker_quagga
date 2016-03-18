@@ -28,8 +28,8 @@ RUN echo 'export VTYSH_PAGER=more' >> /etc/bash.bashrc
 COPY start_quagga.sh /etc/my_init.d/00-start_quagga.sh
 
 # Start the custom Cumulus cl-cmd service.
-RUN mkdir /etc/service/clcmd
-RUN mkdir /usr/share/cumulus/
+RUN mkdir -p /etc/service/clcmd
+RUN mkdir -p /usr/share/cumulus/
 ADD start_clcmd.sh /etc/service/clcmd/run
 
 CMD ["/sbin/my_init"]
