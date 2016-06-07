@@ -14,4 +14,8 @@ else
   sed -i 's/^ospfd=.*$/ospfd=no/g' /etc/quagga/daemons
 fi
 
-service quagga start
+#service quagga start
+/usr/lib/quagga/quagga start
+
+# Start clcmd so we can send commands from other containers.
+exec /usr/bin/python /usr/lib/python2.7/dist-packages/clcmd_server.py 2>&1
