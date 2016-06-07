@@ -1,2 +1,2 @@
-deb http://repo.cumulusnetworks.com CumulusLinux-2.5 main addons updates
-deb http://repo.cumulusnetworks.com CumulusLinux-2.5 security-updates
+deb http://repo3.cumulusnetworks.com/repo CumulusLinux-3 cumulus upstream
+deb http://repo3.cumulusnetworks.com/repo CumulusLinux-3-updates cumulus upstream
