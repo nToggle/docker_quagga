@@ -10,7 +10,7 @@ RUN apt-get update --fix-missing && apt-get -y upgrade && \
 COPY cumulus.list /etc/apt/sources.list.d/cumulus.list
 
 RUN apt-get update && \
-    apt-get -y --allow-unauthenticated install quagga=0.99.23.1-1+cl3u2 python-clcmd && \
+    apt-get -y --allow-unauthenticated install quagga=0.99.24+cl3u3 python-clcmd && \
     apt-get -y clean
 
 # Setup Quagga
